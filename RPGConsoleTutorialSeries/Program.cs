@@ -1,11 +1,15 @@
 ﻿using System;
+using RPGConsoleTutorialSeries.Adventures;
+using RPGConsoleTutorialSeries.Entities;
 using RPGConsoleTutorialSeries.Game;
 
 namespace RPGConsoleTutorialSeries
 {
     class Program
     {
-        private static GameService gameService = new GameService();
+        private static AdventureService adventureService = new AdventureService();
+        private static CharacterService characterService = new CharacterService();
+        private static GameService gameService = new GameService(adventureService, characterService);
         static void Main(string[] args)
         {
             MakeTitle();
